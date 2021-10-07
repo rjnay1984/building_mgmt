@@ -5,10 +5,6 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
-defaults:
-  run:
-    working-directory: ./building_mgmt
     
 jobs:
   build:
@@ -32,3 +28,4 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
+      working-directory: ./building_mgmt
