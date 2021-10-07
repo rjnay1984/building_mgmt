@@ -1,6 +1,6 @@
 from django.views import generic
 
-from .models import Building
+from .models import Building, Unit
 
 # Create your views here.
 
@@ -21,3 +21,16 @@ class DetailView(generic.DetailView):
 class UnitView(generic.DetailView):
     model = Building
     template_name = 'buildings/units.html'
+
+
+class UnitList(generic.ListView):
+    template_name = 'units/index.html'
+    context_object_name = 'unit_list'
+
+    def get_queryset(self):
+        return Unit.objects.all()
+
+
+class UnitDetail(generic.DetailView):
+    model = Unit
+    template_name = 'units/detail.html'

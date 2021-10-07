@@ -1,6 +1,6 @@
 <h1>{{ building.address }} Units</h1>
 <ul>
   {% for unit in building.unit_set.all %}
-  <li>{{ unit.number }}</li>
+  <li><a href="{% url 'unitdetail' unit.id %}">{{ unit.number }}</a></li>
   {% endfor %}
 </ul>

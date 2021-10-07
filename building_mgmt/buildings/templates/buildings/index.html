@@ -3,7 +3,7 @@
 <ul>
   {% for building in building_list %}
   <li>
-    <a href="{% url 'detail' building.id %}"> {{ building.address }} </a>
+    <a href="{% url 'buildingdetail' building.id %}"> {{ building.address }} </a>
   </li>
   {% endfor %}
 </ul>
