@@ -1,0 +1,6 @@
+<h1>{{ building.address }} Units</h1>
+<ul>
+  {% for unit in building.unit_set.all %}
+  <li>{{ unit.number }}</li>
+  {% endfor %}
+</ul>
