@@ -1,0 +1,5 @@
+<h1>{{ building.address }}</h1>
+<hr />
+<h4>{{ building.city }}, {{ building.state }}</h4>
+<p>Landlord: {{ building.landlord.email }}</p>
+<a href="{% url 'buildingunits' building.id %}">View Units</a>

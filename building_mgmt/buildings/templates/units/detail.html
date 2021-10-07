@@ -1,0 +1,9 @@
+<h1>{{ unit.number }}</h1>
+<hr>
+<h3>Building: {{ unit.building }}</h3>
+<h4>Tenant: {{ unit.tenant }}</h4>
+<p>Rooms: {{ unit.rooms }}</p>
+<p>Bathrooms: {{ unit.bathrooms }}</p>
+<div>{{ unit.description }}</div>
+<p><a href="{% url 'unitindex' %}">View All Units</a></p>
+<p><a href="{% url 'buildingunits' unit.building.id %}">Units in this building</a></p>
