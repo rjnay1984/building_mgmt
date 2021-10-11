@@ -1,5 +1,7 @@
-<h1>Buildings</h1>
+{% extends 'base.html' %}
+{% block title %}Buildings{% endblock title %}
 
+{% block content %}
 <ul>
   {% for building in building_list %}
   <li>
@@ -7,3 +9,5 @@
   </li>
   {% endfor %}
 </ul>
+{% endblock content %}
+

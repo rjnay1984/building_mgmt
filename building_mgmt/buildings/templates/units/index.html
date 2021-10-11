@@ -1,4 +1,7 @@
-<h1>All Units</h1>
+{% extends 'base.html' %}
+
+{% block title %}All Units{% endblock title %}
+{% block content %}
 <ul>
   {% for unit in unit_list %}
   <li>
@@ -7,3 +10,4 @@
   </li>
   {% endfor %}
 </ul>
+{% endblock content %}
