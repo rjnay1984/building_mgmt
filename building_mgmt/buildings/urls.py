@@ -8,6 +8,6 @@ urlpatterns = [
     path('buildings/<int:pk>', views.BuildingDetail.as_view(), name='buildingdetail'),
     path('buildings/<int:pk>/units',
          views.UnitView.as_view(), name='buildingunits'),
-    path('buildings/units', views.UnitList.as_view(), name='unitindex'),
+    path('units', views.UnitList.as_view(), name='unitindex'),
     path('buildings/units/<int:pk>', views.UnitDetail.as_view(), name='unitdetail')
 ]
