@@ -5,7 +5,11 @@ from .models import Building, Unit
 # Create your views here.
 
 
-class IndexView(generic.ListView):
+class IndexView(generic.TemplateView):
+    template_name = 'index.html'
+
+
+class BuildingList(generic.ListView):
     template_name = 'buildings/index.html'
     context_object_name = 'building_list'
 
@@ -13,7 +17,7 @@ class IndexView(generic.ListView):
         return Building.objects.all()
 
 
-class DetailView(generic.DetailView):
+class BuildingDetail(generic.DetailView):
     model = Building
     template_name = 'buildings/detail.html'
 
