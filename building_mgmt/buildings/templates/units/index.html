@@ -2,12 +2,10 @@
 
 {% block title %}All Units{% endblock title %}
 {% block content %}
-<ul>
+<hr>
+<div class="list-group">
   {% for unit in unit_list %}
-  <li>
-    <a href="{% url 'unitdetail' unit.id %}">{{ unit.number }}</a> -
-    <a href="{% url 'buildingdetail' unit.building.id %}">{{ unit.building }}</a>
-  </li>
+  <a href="{% url 'unitdetail' unit.id %}" class="list-group-item list-group-item-action">{{ unit.number }} - {{ unit.building }}</a>
   {% endfor %}
-</ul>
+</div>
 {% endblock content %}
