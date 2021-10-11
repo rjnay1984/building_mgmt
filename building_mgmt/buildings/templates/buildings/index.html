@@ -2,12 +2,10 @@
 {% block title %}Buildings{% endblock title %}
 
 {% block content %}
-<ul>
+<div class="list-group">
   {% for building in building_list %}
-  <li>
-    <a href="{% url 'buildingdetail' building.id %}"> {{ building.address }} </a>
-  </li>
+    <a href="{% url 'buildingdetail' building.id %}" class="list-group-item list-group-item-action"> {{ building.address }} </a>
   {% endfor %}
-</ul>
+</div>
 {% endblock content %}
 
