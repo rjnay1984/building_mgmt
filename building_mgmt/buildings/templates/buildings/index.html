@@ -1,9 +1,20 @@
-<h1>Buildings</h1>
+{% extends 'base.html' %}
+{% block title %}Buildings{% endblock title %}
 
-<ul>
+{% block content %}
+<hr>
+<div class="row rol-cols-1 rol-cols-md-4 g-4">
   {% for building in building_list %}
-  <li>
-    <a href="{% url 'buildingdetail' building.id %}"> {{ building.address }} </a>
-  </li>
+    <div class="col">
+      <a href="{% url 'buildingdetail' building.id %}" class="card text-decoration-none text-reset">
+        <img src="https://via.placeholder.com/300" class="card-img" alt="{{ building.address }} Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ building.address }}</h5>
+          <p>{{ building.city }}, {{ building.state }}</p>
+        </div>
+      </a>
+    </div>
   {% endfor %}
-</ul>
+</div>
+{% endblock content %}
+

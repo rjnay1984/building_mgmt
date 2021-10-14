@@ -12,7 +12,7 @@ class BuildingViewTests(TestCase):
     def test_building_index(self):
         response = self.client.get(reverse('buildingindex'))
         self.assertIs(response.status_code, 200)
-        self.assertIs(len(response.context['building_list']), 2)
+        self.assertIs(len(response.context['building_list']), 4)
 
     def test_building_detail(self):
         building = Building.objects.filter(pk=1).first()
@@ -36,7 +36,7 @@ class UnitViewTests(TestCase):
     def test_unit_index(self):
         response = self.client.get(reverse('unitindex'))
         self.assertIs(response.status_code, 200)
-        self.assertIs(len(response.context['unit_list']), 2)
+        self.assertIs(len(response.context['unit_list']), 6)
 
     def test_unit_detail(self):
         unit = Unit.objects.filter(pk=1).first()

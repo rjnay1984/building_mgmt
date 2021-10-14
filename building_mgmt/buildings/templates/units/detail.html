@@ -1,4 +1,7 @@
-<h1>{{ unit.number }}</h1>
+{% extends 'base.html' %}
+
+{% block title %}{{ unit.number}}{% endblock title %}
+{% block content %}
 <hr>
 <h3>Building: {{ unit.building }}</h3>
 <h4>Tenant: {{ unit.tenant }}</h4>
@@ -7,3 +10,4 @@
 <div>{{ unit.description }}</div>
 <p><a href="{% url 'unitindex' %}">View All Units</a></p>
 <p><a href="{% url 'buildingunits' unit.building.id %}">Units in this building</a></p>
+{% endblock content %}
