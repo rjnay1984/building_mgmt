@@ -2,10 +2,26 @@
 
 {% block title %}All Units{% endblock title %}
 {% block content %}
-<hr>
-<div class="list-group">
-  {% for unit in unit_list %}
-  <a href="{% url 'unitdetail' unit.id %}" class="list-group-item list-group-item-action">{{ unit.number }} - {{ unit.building }}</a>
-  {% endfor %}
-</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Beds</th>
+      <th scope="col">Baths</th>
+      <th scope="col">Building</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for unit in unit_list %}
+    <tr>
+      <th scope="row">
+        <a href="{% url 'unitdetail' unit.id %}">{{ unit.number }}</a>
+      </th>
+      <td>{{ unit.rooms }}</td>
+      <td>{{ unit.bathrooms }}</td>
+      <td>{{ unit.building }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock content %}
