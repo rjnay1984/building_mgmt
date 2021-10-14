@@ -2,9 +2,18 @@
 {% block title %}Buildings{% endblock title %}
 
 {% block content %}
-<div class="list-group">
+<hr>
+<div class="row rol-cols-1 rol-cols-md-4 g-4">
   {% for building in building_list %}
-    <a href="{% url 'buildingdetail' building.id %}" class="list-group-item list-group-item-action"> {{ building.address }} </a>
+    <div class="col">
+      <a href="{% url 'buildingdetail' building.id %}" class="card text-decoration-none text-reset">
+        <img src="https://via.placeholder.com/300" class="card-img" alt="{{ building.address }} Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ building.address }}</h5>
+          <p>{{ building.city }}, {{ building.state }}</p>
+        </div>
+      </a>
+    </div>
   {% endfor %}
 </div>
 {% endblock content %}
